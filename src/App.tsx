@@ -3,7 +3,7 @@ import Routemap from "Routemap";
 
 export default observer(() => {
   return (
-    <div className="font-monstserrat">
+    <div className="font-montserrat">
       <Routemap />
     </div>
   );

@@ -1,11 +1,11 @@
 import { Router } from "@reach/router";
 import { observer } from "mobx-react-lite";
-import Landing from "Page/Landing";
+import Main from "Page/Main";
 
 export default observer(() => {
   return (
     <Router>
-      <Landing path="/" />
+      <Main path="/" />
     </Router>
   );
 });
