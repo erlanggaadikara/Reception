@@ -1,17 +1,12 @@
 import { observer, useLocalObservable } from "mobx-react-lite";
-import { useMediaQuery } from "@material-ui/core";
 import Dropdown from "libs/ui/Dropdown";
 import DehazeIcon from "@material-ui/icons/Dehaze";
 
 export default observer(() => {
-  const isMobile = useMediaQuery("(max-width: 768)");
   const meta = useLocalObservable(() => ({ open: false as any }));
 
   return (
-    <div
-      id="navbar"
-      className="w-full absolute top-0 bg-transparent p-10 md:p-5"
-    >
+    <div id="navbar" className="w-full bg-transparent p-10 md:p-5">
       <div className="flex flex-row items-center lg:py-2 lg:px-8 md:py-4 md:px-5 font-bold text-black rounded-full lg:bg-yellow-50">
         <div className="w-1/2">
           <label>Reception App</label>
