@@ -1,6 +1,13 @@
 import { observer } from "mobx-react-lite";
 
-export default observer((props: any) => {
+interface propType {
+  children: any;
+  className?: any;
+  onFocus?: () => null;
+  onFocusOut?: () => null;
+}
+
+export default observer((props: propType) => {
   return (
     <p
       className={`${

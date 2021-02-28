@@ -12,7 +12,10 @@ interface propTypes {
 
 export default observer((props: propTypes) => {
   return (
-    <button className="p-0 m-0 outline-none" onClick={props.onClick}>
+    <button
+      className="p-0 m-0 outline-none focus:outline-none"
+      onClick={props.onClick}
+    >
       <img {...props} />
     </button>
   );

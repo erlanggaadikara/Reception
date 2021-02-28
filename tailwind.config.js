@@ -16,7 +16,7 @@ module.exports = {
       white: "#FFFFFF",
       gray: "#6F6868",
       black: "#000000",
-      transparentBlack: "rgba(3, 3, 3, 0.28)",
+      transparentBlack: "rgba(3, 3, 3, 0.5)",
     },
   },
   variants: {

@@ -31,18 +31,21 @@ export default observer(() => {
   };
 
   return (
-    <div id="login" className="flex flex-col justify-center items-center px-32">
+    <div
+      id="login"
+      className="flex flex-col justify-center items-center px-32 py-4  mt-10"
+    >
       <Text className="text-blue text-4xl font-bold text-center mt-16">
         Register
       </Text>
       <Text className="text-gray text-xl text-center mt-2 mb-10">
         Let's get in touch!
       </Text>
-      <div className="border-2 border-gray lg:w-3/5 mb-14">
+      <div className="border-2 border-gray lg:w-3/5 px-4">
         <div className="flex flex-col justify-center items-center ">
           <form className="flex flex-col mt-10">
             <TextInput
-              className="w-96 border-gray border-2 pl-2"
+              className="lg:w-96 border-gray border-2 pl-2"
               type="email"
               label="Email"
               placeholder="youremail@mail.com"
@@ -51,7 +54,7 @@ export default observer(() => {
               onChange={handleEmail}
             />
             <TextInput
-              className="w-96 border-gray border-2 pl-2"
+              className="lg:w-96 border-gray border-2 pl-2"
               type="password"
               label="Password"
               placeholder="xxxxxx"
@@ -60,7 +63,7 @@ export default observer(() => {
               onChange={handlePassword}
             />
             <TextInput
-              className="w-96 border-gray border-2 pl-2"
+              className="lg:w-96 border-gray border-2 pl-2"
               type="password"
               label="Confirm Password"
               placeholder="xxxxxx"
@@ -74,12 +77,12 @@ export default observer(() => {
           </Text>
           <div className="flex flex-row">
             <Image
-              src={require("assets/image/fb-icon.png")}
+              src={"assets/image/fb-icon.png"}
               className="w-20 px-5"
               alt="fb"
             />
             <Image
-              src={require("assets/image/google-icon.png")}
+              src={"assets/image/google-icon.png"}
               className="w-20 px-5"
               alt="google"
             />
