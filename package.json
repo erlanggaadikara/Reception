@@ -42,7 +42,7 @@
     "prebuild": "yarn build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "netlify": "CI= yarn build:tailwind && react-scripts build",
+    "netlify": "yarn build:tailwind && CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
