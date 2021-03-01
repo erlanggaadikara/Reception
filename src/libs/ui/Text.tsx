@@ -5,6 +5,7 @@ interface propType {
   className?: any;
   onFocus?: () => null;
   onFocusOut?: () => null;
+  css?: any;
 }
 
 export default observer((props: propType) => {
@@ -13,6 +14,7 @@ export default observer((props: propType) => {
       className={`${
         props.className ? props.className : "text-xl"
       } font-montserrat`}
+      {...props}
     >
       {props.children}
     </p>

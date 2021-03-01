@@ -50,7 +50,13 @@ export default observer((props: propType) => {
   return (
     <>
       <Helmet>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Honeyday make it easier to create and share your invitation, you can
+      also edit and update information without wasting time and money. Ever
+      thought manage guests much easier? Honeyday record every guest with QR
+      Code feature."
+        />
         <title>Honeyday: your trusted Wedding Management System</title>
       </Helmet>
       <div className="h-screen flex flex-col">
