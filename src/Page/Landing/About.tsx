@@ -1,8 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import { css, jsx } from "@emotion/react";
 import { observer } from "mobx-react-lite";
 import Text from "libs/ui/Text";
-import { Helmet } from "react-helmet";
 
 export default observer(() => {
   return (
@@ -10,7 +9,21 @@ export default observer(() => {
       id="about"
       className="flex flex-col bg-white w-screen h-screen p-16 justify-between"
     >
-      <div className="lg:w-1/2 w-auto flex flex-col h-96 self-end">
+      <div
+        // className="lg:w-1/2 w-auto flex flex-col h-96 self-end"
+        css={css`
+          display: flex;
+          width: auto;
+          flex-direction: column;
+          height: 24rem;
+          align-self: flex-end;
+          @media (min-width: 1024px) {
+            .lg\:w-1\/2 {
+              width: 50%;
+            }
+          }
+        `}
+      >
         <Text className="text-blue text-4xl">We give you quick solution</Text>
         <div className="bg-blue h-2 my-2"></div>
         <Text className="text-blue text-4xl">
