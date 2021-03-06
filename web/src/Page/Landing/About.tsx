@@ -18,14 +18,17 @@ export default observer(() => {
           height: 24rem;
           align-self: flex-end;
           @media (min-width: 1024px) {
-            .lg\:w-1\/2 {
-              width: 50%;
-            }
+            width: 50%;
           }
         `}
       >
         <Text className="text-blue text-4xl">We give you quick solution</Text>
-        <div className="bg-blue h-2 my-2"></div>
+        <div
+          className="bg-blue h-2 my-2"
+          css={css`
+            background-color: #5cbaee;
+          `}
+        ></div>
         <Text className="text-blue text-4xl">
           No paper, make it and share it!
         </Text>

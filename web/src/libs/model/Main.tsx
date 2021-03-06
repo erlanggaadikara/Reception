@@ -1,4 +1,3 @@
-import { observer } from "mobx-react-lite";
 import { observable, action, computed, makeAutoObservable } from "mobx";
 
 class MainSingle {

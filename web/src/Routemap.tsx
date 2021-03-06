@@ -2,7 +2,7 @@ import { Router } from "@reach/router";
 import { observer } from "mobx-react-lite";
 import Theme from "Page/Theme";
 import Landing from "Page/Landing";
-import Main from "Page/Theme/Main";
+import Main from "Page/Theme/Main/Page";
 
 export default observer(() => {
   return (
