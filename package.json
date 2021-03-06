@@ -19,7 +19,9 @@
     "ezwork": "nodemon index.js",
     "web": "yarn workspace web",
     "server": "yarn workspace server",
-    "function": "yarn workspace function"
+    "function": "yarn workspace function",
+    "web:build": "yarn web build",
+    "netlify": "yarn web netlify"
   },
   "type": "module"
 }
