@@ -6,7 +6,10 @@
   "author": "Erlangga",
   "dependencies": {
     "chokidar": "^3.5.1",
-    "nodemon": "^2.0.7"
+    "fastify": "^3.13.0",
+    "fastify-postgraphile": "^1.0.0",
+    "nodemon": "^2.0.7",
+    "postgraphile": "^4.11.0"
   },
   "scripts": {
     "start:web": "nodemon ./mkfile/index.js"
