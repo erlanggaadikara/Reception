@@ -10,6 +10,7 @@ import Register from "Page/Landing/Register";
 import Whatis from "Page/Landing/Whatis";
 import About from "Page/Landing/About";
 import Pricing from "Page/Landing/Pricing";
+import Contact from "Page/Landing/Contact"
 
 export const user = observable({ current: "Login" });
 
@@ -59,17 +60,17 @@ export default observer((props: propType) => {
         />
         <title>Honeyday: your trusted Wedding Management System</title>
       </Helmet>
-      <div className="h-screen flex flex-col">
+      <div className="flex flex-col">
         <Navbar />
         <div className="flex flex-col">
-          <div className="bg-home bg-cover bg-transparentBlack lg:h-screen h-72 m-0 p-0 flex flex-col items-center justify-center ">
-            <Text className="font-bold text-white text-6xl">
+          <div className="bg-home bg-cover lg:h-screen h-72 m-0 p-0 flex flex-col items-center lg:justify-center justify-end">
+            <Text className="font-bold text-white lg:text-6xl md:text-normal">
               Take controll your guess easily
             </Text>
-            <Text className="font-bold text-gray text-6xl">
+            <Text className="font-bold text-gray-500 lg:text-6xl md:text-normal">
               Visualize your Invitation
             </Text>
-            <Text className="text-xl text-white my-5">
+            <Text className="lg:text-xl text-xs lg:w-auto w-80 text-white my-5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
@@ -78,6 +79,7 @@ export default observer((props: propType) => {
           <About />
           <Pricing />
           {user.current == "Login" ? <Login /> : <Register />}
+          <Contact/>
         </div>
       </div>
     </>

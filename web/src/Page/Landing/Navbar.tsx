@@ -22,12 +22,11 @@ export default observer(() => {
           </Text>
         </div>
         <div className="w-1/2 invisible lg:visible flex flex-row items-center justify-around rounded-full lg:py-2 lg:px-8 lg:bg-white">
-          <a href="#whatis">What is Honeyday?</a>
-          <a href="#about">About</a>
+          <a href="#about">FAQ</a>
           <a href="#">Price</a>
           <a href="#">Contact</a>
           <a
-            className="px-5 py-1 bg-blue rounded-full text-white"
+            className="px-5 py-1 bg-blue-500 rounded-full text-white"
             href="#login"
           >
             {user.current}
@@ -44,13 +43,6 @@ export default observer(() => {
 const Mobile = observer(({ open, onclick }: any) => {
   return (
     <Dropdown caption={<DehazeIcon />} open={open} onClick={onclick}>
-      <a
-        href="#whatis"
-        className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
-        role="menuitem"
-      >
-        What is Honeyday?
-      </a>
       <a
         href="#about"
         className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"

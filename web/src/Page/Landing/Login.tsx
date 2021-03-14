@@ -32,9 +32,9 @@ export default observer(() => {
   return (
     <div
       id="login"
-      className="flex flex-col justify-center items-center px-32 py-4 mt-10"
+      className="flex flex-col justify-center items-center px-32 py-4 bg-gray-50"
     >
-      <Text className="text-blue text-4xl font-bold text-center mt-5">
+      <Text className="text-blue-300 text-4xl font-bold text-center mt-5">
         Login
       </Text>
       <Text className="text-gray lg:text-xl text-lg text-center mt-2 mb-10">
@@ -42,7 +42,7 @@ export default observer(() => {
       </Text>
       <div className="border-2 border-gray lg:w-3/5 px-4">
         <div className="flex flex-col justify-center items-center ">
-          <form className="flex flex-col mt-10" onSubmit={submit}>
+          <form className="flex flex-col justify-center items-center mt-10" onSubmit={submit}>
             <TextInput
               className="lg:w-96 border-gray border-2 pl-2"
               type="email"
@@ -61,7 +61,7 @@ export default observer(() => {
               value={meta.password}
               onChange={handlePassword}
             />
-          </form>
+          
           <Text className="text-gray text-lg text-center py-7">
             Or login with
           </Text>
@@ -77,13 +77,14 @@ export default observer(() => {
               alt="google"
             />
           </div>
-          <Button caption="Login" className="w-64 bg-blue text-white" />
+          <Button caption="Login" className="w-64 bg-blue-500 text-white" />
+          </form>
           <Text className="text-gray text-lg text-center mb-10">
             Don't have an account?{" "}
             <a
               href="#login"
               onClick={() => (user.current = "Register")}
-              className="text-blue"
+              className="text-blue-300"
             >
               Register
             </a>

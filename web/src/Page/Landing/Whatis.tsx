@@ -20,9 +20,9 @@ export default observer(() => {
   return (
     <div
       id="whatis"
-      className="flex flex-col bg-white w-screen p-16 justify-between"
+      className="bg-white w-screen"
     >
-      <div className="lg:w-1/2 w-auto flex flex-col h-96">
+      {/* <div className="lg:w-1/2 w-auto flex flex-col h-96">
         <Text className="text-blue text-4xl">
           An Adaptive management system for wedding event
         </Text>
@@ -36,16 +36,16 @@ export default observer(() => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
-      </div>
+      </div> */}
       <div className="flex flex-col">
-        <div className="bg-blue text-white text-center font-bold py-3 rounded-md">
+        {/* <div className="bg-blue text-white text-center font-bold py-3 rounded-md">
           Some other features
-        </div>
-        <div className="flex flex-row flex-wrap justify-evenly items-center">
+        </div> */}
+        <div className="flex flex-row justify-evenly">
           {assets.map((item) => (
-            <div className="flex flex-col my-8 items-center">
-              <img src={item.img} className="w-40 h-40" alt="di" />
-              <Text className="text-black my-8 text-center font-semibold">
+            <div className="flex flex-col my-8 lg:w-auto w-20 items-center">
+              <img src={item.img} className="lg:w-40 lg:h-40 w-20 h-20" alt="di" />
+              <Text className="text-black my-8 text-center font-semibold lg:text-base text-xs">
                 {item.name}
               </Text>
             </div>

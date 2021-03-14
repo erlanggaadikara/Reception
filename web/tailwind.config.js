@@ -12,8 +12,5 @@ module.exports = {
       montserrat: ["Montserrat"],
     },
   },
-  variants: {
-    extend: {},
-  },
   plugins: [],
 };
