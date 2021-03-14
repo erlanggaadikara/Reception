@@ -1,5 +1,4 @@
 import { observer } from "mobx-react-lite";
-import _ from "lodash";
 
 export default observer((props: any) => {
   return (

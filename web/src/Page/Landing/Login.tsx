@@ -5,6 +5,7 @@ import Button from "libs/ui/Button";
 import Text from "libs/ui/Text";
 import Image from "libs/ui/Image";
 import { user } from "Page/Landing";
+import {navigate} from "@reach/router"
 
 export default observer(() => {
   const meta = useLocalObservable(() => ({
@@ -26,7 +27,7 @@ export default observer(() => {
   };
 
   const submit = () => {
-    runInAction(() => null);
+    runInAction(() => navigate("/Admin"));
   };
 
   return (
@@ -77,7 +78,7 @@ export default observer(() => {
               alt="google"
             />
           </div>
-          <Button caption="Login" className="w-64 bg-blue-500 text-white" />
+          <Button caption="Login" className="w-64 bg-blue-500 text-white" onClick={submit}/>
           </form>
           <Text className="text-gray text-lg text-center mb-10">
             Don't have an account?{" "}
