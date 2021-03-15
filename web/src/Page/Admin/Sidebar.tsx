@@ -3,8 +3,8 @@ import {navigate} from '@reach/router'
 
 export default observer(() =>{
     return (
-        <div className="md:flex flex-col md:flex-row md:min-h-screen w-auto bg-black">
-            <div className="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0">
+        <div className="md:flex flex-col md:flex-row md:min-h-screen w-auto bg-gray-200 pt-10">
+            <div className="flex flex-col w-full md:w-64 text-gray-700  dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0">
                 <div className="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
                     <a className="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Honeyday</a>
                     <button className="rounded-lg md:hidden focus:outline-none focus:shadow-outline"/>

@@ -12,7 +12,7 @@ export default observer((props: propType) => {
   return (
     <p
       className={`${
-        props.className ? props.className : "text-xl"
+        props.className ? props.className : " text-xl"
       } font-montserrat`}
       {...props}
     >

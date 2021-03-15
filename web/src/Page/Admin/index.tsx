@@ -9,7 +9,7 @@ interface propType{
 
 export default observer((props:propType) =>{
     return(
-        <div className="flex flex-row">
+        <div className="flex flex-row w-screen">
             <Sidebar/>
             {props.children}
         </div>
