@@ -76,16 +76,8 @@ export default observer((props: propType) => {
           </Card>
         ))}
       </div>
-      <div
-        className="flex self-center py-12"
-        css={css`
-        width: 82vw;
-        @media (min-width: 600px) {
-            widtH 100vw;
-        }
-      `}
-      >
-        <Text className="italic align-center">
+      <div className="flex self-center py-12 text-center">
+        <Text className="italic text-center">
           {`
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           `}
