@@ -1,11 +1,11 @@
 import { observer } from "mobx-react-lite";
 
-export default observer((props: any) => {
+export default observer(({className, ...rest}: any) => {
   return (
     <img
-      className={`rounded-full ring-2 ring-white ${props.className}`}
+      className={`rounded-full ring-2 ring-white ${className}`}
       alt=""
-      {...props}
+      {...rest}
     />
   );
 });

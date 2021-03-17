@@ -5,15 +5,15 @@ export default observer(() => {
   const assets = [
     {
       name: "Digital  Invitation Card",
-      img: "assets/image/di-icon.png",
+      img: "assets/images/di-icon.png",
     },
     {
       name: "Manage Guest",
-      img: "assets/image/mg-icon.png",
+      img: "assets/images/mg-icon.png",
     },
     {
       name: "Interactive With Google Maps",
-      img: "assets/image/gm-icon.png",
+      img: "assets/images/gm-icon.png",
     },
   ];
 

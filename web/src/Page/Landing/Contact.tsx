@@ -33,7 +33,7 @@ export default observer(() =>{
                 <Text>Maps</Text>
                 <Separator/>
                 <div className="mt-9  bg-gray-200"> 
-                <Image src={"assets/image/GoogleMap.png"} className="bg-gray-200"/>
+                <Image src={"assets/images/GoogleMap.png"} className="bg-gray-200"/>
                 </div>
             </div>
         </div>

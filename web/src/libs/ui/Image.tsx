@@ -10,13 +10,13 @@ interface propTypes {
   alt?: string;
 }
 
-export default observer((props: propTypes) => {
+export default observer(({onClick, ...rest}: propTypes) => {
   return (
     <button
       className="p-0 m-0 outline-none focus:outline-none"
-      onClick={props.onClick}
+      onClick={onClick}
     >
-      <img {...props} />
+      <img {...rest} />
     </button>
   );
 });

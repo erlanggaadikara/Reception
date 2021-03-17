@@ -8,15 +8,15 @@ interface propType {
   css?: any;
 }
 
-export default observer((props: propType) => {
+export default observer(({className, children, ...rest}: propType) => {
   return (
     <p
       className={`${
-        props.className ? props.className : " text-xl"
+        className ? className : " text-xl"
       } font-montserrat`}
-      {...props}
+      {...rest}
     >
-      {props.children}
+      {children}
     </p>
   );
 });

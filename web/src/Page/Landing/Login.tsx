@@ -68,12 +68,12 @@ export default observer(() => {
           </Text>
           <div className="flex flex-row">
             <Image
-              src={"assets/image/fb-icon.png"}
+              src={"assets/images/fb-icon.png"}
               className="w-20 px-5"
               alt="fb"
             />
             <Image
-              src={"assets/image/google-icon.png"}
+              src={"assets/images/google-icon.png"}
               className="w-20 px-5"
               alt="google"
             />
