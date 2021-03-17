@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from "@emotion/react";
 import { observer, useLocalObservable } from "mobx-react-lite";
 import { observable } from "mobx";
 import { RouteComponentProps } from "@reach/router";
@@ -10,7 +12,7 @@ import Register from "Page/Landing/Register";
 import Whatis from "Page/Landing/Whatis";
 import About from "Page/Landing/About";
 import Pricing from "Page/Landing/Pricing";
-import Contact from "Page/Landing/Contact"
+import Contact from "Page/Landing/Contact";
 
 export const user = observable({ current: "Login" });
 
@@ -63,7 +65,15 @@ export default observer((props: propType) => {
       <div className="flex flex-col">
         <Navbar />
         <div className="flex flex-col">
-          <div className="bg-home bg-cover lg:h-screen h-72 m-0 p-0 flex flex-col items-center lg:justify-center justify-end">
+          <div
+            className="lg:h-screen h-72 m-0 p-0 flex flex-col items-center lg:justify-center justify-end"
+            css={css`
+              background-image: url("assets/images/wpp-1.png");
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-color: rgba(0, 0, 0, 0.5);
+            `}
+          >
             <Text className="font-bold text-white lg:text-6xl md:text-normal">
               Take controll your guess easily
             </Text>
@@ -79,7 +89,7 @@ export default observer((props: propType) => {
           <About />
           <Pricing />
           {user.current == "Login" ? <Login /> : <Register />}
-          <Contact/>
+          <Contact />
         </div>
       </div>
     </>
