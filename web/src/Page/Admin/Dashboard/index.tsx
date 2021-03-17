@@ -6,7 +6,6 @@ import Button from "libs/ui/Button";
 import Card from "libs/ui/Card";
 import Image from "libs/ui/Image";
 import AddIcon from "@material-ui/icons/Add";
-import SearchIcon from "@material-ui/icons/Search";
 import Text from "libs/ui/Text";
 import TextInput from "libs/ui/TextInput";
 import { navigate } from "@reach/router";
@@ -20,17 +19,15 @@ const item = [
   { name: "Adinda & Ananda", img: "/assets/images/wpp-2.png" },
   { name: "Adinda & Ananda", img: "/assets/images/wpp-1.png" },
   { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
 ];
 
 export default observer((props: propType) => {
   return (
-    <div
-      className="flex flex-col"
-      css={css`
-        width: 82vw;
-      `}
-    >
-      <div className="p-8 flex flex-row justify-end">
+    <div className="flex flex-col w-full">
+      <div className="lg:p-8 p-1 flex flex-row justify-end">
         <Button
           className="bg-green-500 hover:bg-green-300 text-white"
           caption={
@@ -57,33 +54,42 @@ export default observer((props: propType) => {
           </form>
         )}
       </div>
-      <div className="flex flex-row px-6 overflow-auto">
+      <div className="flex px-6 overflow-scroll">
         {item.map((items: any) => (
-          <Card
-            className="border-gray-900"
-            css={css`
-              overflow: hidden;
-              &:hover img {
-                filter: grayscale(0);
-                transform: scale(1.1);
-              }
-            `}
-          >
-            <Image
-              src={items.img}
-              alt="wpp"
-              css={css`
-                transition: transform 0.5s, filter 1.5s ease-in-out;
-                filter: grayscale(100%);
-                border-top-right-radius: 0.375rem;
-                border-top-left-radius: 0.375rem;
-                height: 11rem;
-                width: 16rem;
-              `}
-            />
+          <Card className="border-gray-400">
+            <div className="overflow-hidden h-44 w-64">
+              <Image
+                src={items.img}
+                alt="wpp"
+                className="object-cover h-44"
+                css={css`
+                  transition: transform 0.5s, filter 1.5s ease-in-out;
+                  border-top-right-radius: 0.375rem;
+                  border-top-left-radius: 0.375rem;
+                  &:hover {
+                    transform: scale(1.1);
+                  }
+                `}
+              />
+            </div>
             <Text className="py-6 px-6">{items.name}</Text>
           </Card>
         ))}
+      </div>
+      <div
+        className="flex self-center py-12"
+        css={css`
+        width: 82vw;
+        @media (min-width: 600px) {
+            widtH 100vw;
+        }
+      `}
+      >
+        <Text className="italic align-center">
+          {`
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          `}
+        </Text>
       </div>
     </div>
   );

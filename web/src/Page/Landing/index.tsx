@@ -92,6 +92,9 @@ export default observer((props: propType) => {
           <Contact />
         </div>
       </div>
+      <footer className="relative bottom-0 w-screen bg-gray-400 align-center py-2">
+        <Text className="text-center">copyright Honyeday</Text>
+      </footer>
     </>
   );
 });

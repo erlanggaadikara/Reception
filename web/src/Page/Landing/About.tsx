@@ -22,7 +22,7 @@ export default observer(() => {
           }
         `}
       >
-        <Text className="text-blue text-4xl">We give you quick solution</Text>
+        <Text className="text-blue text-4xl">Quick Solution</Text>
         <div
           className="bg-blue h-2 my-2"
           css={css`
@@ -30,7 +30,7 @@ export default observer(() => {
           `}
         ></div>
         <Text className="text-blue text-4xl">
-          No paper, make it and share it!
+          Make it and share it!
         </Text>
         <Text className="text-black text-justify text-base mt-7">
           Honeyday make it easier to create and share your invitation, you can
