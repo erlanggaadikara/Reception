@@ -12,7 +12,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
-    "@types/lodash": "^4.14.168",
     "@types/node": "^12.0.0",
     "@types/reach__router": "^1.3.6",
     "@types/react": "^16.9.53",
@@ -21,7 +20,7 @@
     "autoprefixer": "9",
     "axios": "^0.21.1",
     "firebase": "^8.2.6",
-    "lodash": "^4.17.20",
+    "formik": "^2.2.6",
     "mobx": "^6.0.4",
     "mobx-react-lite": "^3.1.6",
     "postcss": "7",
@@ -33,7 +32,8 @@
     "react-scripts": "4.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
@@ -41,9 +41,7 @@
     "prebuild": "yarn build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "netlify": "yarn build:tailwind && CI= react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "netlify": "yarn build:tailwind && CI= react-scripts build"
   },
   "eslintConfig": {
     "extends": [
