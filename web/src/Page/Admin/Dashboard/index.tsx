@@ -9,6 +9,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Text from "libs/ui/Text";
 import TextInput from "libs/ui/TextInput";
 import { navigate } from "@reach/router";
+import { v4 as uuid } from "uuid";
 
 interface propType {
   path?: RouteComponentProps;
@@ -56,7 +57,7 @@ export default observer((props: propType) => {
       </div>
       <div className="flex px-6 overflow-scroll">
         {item.map((items: any) => (
-          <Card className="border-gray-400">
+          <Card key={uuid()} className="border-gray-400">
             <div className="overflow-hidden h-44 w-64">
               <Image
                 src={items.img}

@@ -66,7 +66,7 @@ export default observer((props: propType) => {
         <Navbar />
         <div className="flex flex-col">
           <div
-            className="lg:h-screen h-72 m-0 p-0 flex flex-col items-center lg:justify-center justify-end"
+            className="lg:h-screen h-72 m-0 p-0 flex flex-col items-center justify-center "
             css={css`
               background-image: url("assets/images/wpp-1.png");
               background-size: cover;
@@ -80,10 +80,6 @@ export default observer((props: propType) => {
             <Text className="font-bold text-gray-500 lg:text-6xl md:text-normal">
               Visualize your Invitation
             </Text>
-            <Text className="lg:text-xl text-xs lg:w-auto w-80 text-white my-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Text>
           </div>
           <Whatis />
           <About />
@@ -93,7 +89,10 @@ export default observer((props: propType) => {
         </div>
       </div>
       <footer className="relative bottom-0 w-screen bg-gray-400 align-center py-2">
-        <Text className="text-center">copyright Honyeday</Text>
+        <Text className="text-center">
+          Copyright © 2021 | All Right Reserved
+        </Text>
+        <Text className="text-center">harimadu.id</Text>
       </footer>
     </>
   );

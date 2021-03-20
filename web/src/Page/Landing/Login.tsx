@@ -17,6 +17,9 @@ export default observer(() => {
 
   const submit = (values: any, actions: any) => {
     console.log(values, actions);
+    if (values) {
+      navigate("/Admin");
+    }
   };
 
   return (

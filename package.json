@@ -18,6 +18,7 @@
   "scripts": {
     "ezwork": "nodemon index.js",
     "web": "yarn workspace web",
+    "dev":"yarn web start",
     "server": "yarn workspace server",
     "function": "yarn workspace function",
     "web:build": "yarn web build",

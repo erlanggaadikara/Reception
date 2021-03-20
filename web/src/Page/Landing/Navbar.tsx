@@ -15,7 +15,7 @@ export default observer(() => {
       <div className="flex flex-row items-center md:py-4 md:px-5 font-bold text-black ">
         <div className="w-1/2 flex-col flex">
           <Text className="text-white lg:text-3xl text-xl font-semibold">
-            Honeyday
+            harimadu.id
           </Text>
           <Text className="text-white font-light lg:text-base text-xs">
             Wedding Management System
@@ -23,8 +23,8 @@ export default observer(() => {
         </div>
         <div className="w-1/2 invisible lg:visible flex flex-row items-center justify-around rounded-full lg:py-2 lg:px-8 lg:bg-white">
           <a href="#about">FAQ</a>
-          <a href="#">Price</a>
-          <a href="#">Contact</a>
+          <a href="#price">Price</a>
+          <a href="#contact">Contact</a>
           <a
             className="px-5 py-1 bg-blue-500 rounded-full text-white"
             href="#login"
@@ -43,30 +43,35 @@ export default observer(() => {
 const Mobile = observer(({ open, onclick }: any) => {
   return (
     <Dropdown caption={<DehazeIcon />} open={open} onClick={onclick}>
-      <a
-        href="#about"
-        className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
-        role="menuitem"
-      >
-        About
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
-        role="menuitem"
-      >
-        Price
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
-        role="menuitem"
-      >
-        Contact
-      </a>
-      <a className="px-5 py-1 bg-blue rounded-full text-white" href="#login">
-        {user.current}
-      </a>
+      <div className="px-1 pb-2">
+        <a
+          href="#about"
+          className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
+          role="menuitem"
+        >
+          About
+        </a>
+        <a
+          href="#price"
+          className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
+          role="menuitem"
+        >
+          Price
+        </a>
+        <a
+          href="#contact"
+          className="block px-4 py-2 text-sm text-gray hover:bg-gray hover:text-gray"
+          role="menuitem"
+        >
+          Contact
+        </a>
+        <a
+          className="px-20 py-1 bg-blue-500 rounded-full text-white"
+          href="#login"
+        >
+          {user.current}
+        </a>
+      </div>
     </Dropdown>
   );
 });
