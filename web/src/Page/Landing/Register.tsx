@@ -6,6 +6,9 @@ import Image from "libs/ui/Image";
 import { user } from "Page/Landing";
 import Form, { Field } from "libs/ui/Form";
 import * as Yup from "yup";
+import { navigate } from "@reach/router";
+import { query } from "libs/utils/Api/graphql";
+import { Session } from "libs/utils/Session";
 
 export default observer(() => {
   const meta = useLocalObservable(() => ({
@@ -14,8 +17,35 @@ export default observer(() => {
     confirmPass: "" as string,
   }));
 
-  const submit = () => {
-    runInAction(() => null);
+  const submit = async (values: any) => {
+    console.log(values);
+    let checkUser = await query(`query {
+      p_user(where: {email: {_eq: "${values.email}"}, password: {_eq: "${values.password}"}}){
+        id
+      }
+    }`);
+
+    console.log(checkUser);
+
+    if (checkUser.p_user.length > 0) {
+      alert("This user already have an account");
+    } else {
+      let register = await query(`mutation {
+        insert_p_user(objects: {email: "${values.email}", password: "${values.password}"}){
+          affected_rows
+          returning {
+            id
+            name
+            email
+          }
+        }
+      }`);
+      console.log(register);
+      if (register.insert_p_user.returning.length > 0) {
+        Session.setSession(register.insert_p_user.returning[0]);
+        navigate("/Admin");
+      }
+    }
   };
 
   return (

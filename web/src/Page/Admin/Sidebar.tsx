@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { navigate } from "@reach/router";
 import Text from "libs/ui/Text";
+import { Session } from "libs/utils/Session";
 
 export default observer(() => {
   return (
@@ -39,7 +40,10 @@ export default observer(() => {
           </a>
           <a
             className="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-blue-300 focus:bg-blue-300 focus:outline-none focus:shadow-outline"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              Session.deleteSession();
+              navigate("/");
+            }}
           >
             Log out
           </a>

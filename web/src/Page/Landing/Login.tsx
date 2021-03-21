@@ -8,6 +8,8 @@ import { user } from "Page/Landing";
 import { navigate } from "@reach/router";
 import Form, { Field } from "libs/ui/Form";
 import * as Yup from "yup";
+import { query } from "libs/utils/Api/graphql";
+import { Session } from "libs/utils/Session";
 
 export default observer(() => {
   const meta = useLocalObservable(() => ({
@@ -15,9 +17,18 @@ export default observer(() => {
     password: "" as string,
   }));
 
-  const submit = (values: any, actions: any) => {
-    console.log(values, actions);
-    if (values) {
+  const submit = async (values: any, actions: any) => {
+    console.log(values);
+    let login = await query(`query {
+      p_user(where: {email: {_eq: "${values.email}"}, password: {_eq: "${values.password}"}}){
+        id
+        name
+        email
+      }
+    }`);
+    console.log(login);
+    if (login.p_user.length > 0) {
+      Session.setSession(login.p_user[0]);
       navigate("/Admin");
     }
   };
