@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite";
 import { RouteComponentProps } from "@reach/router";
 import Sidebar from "Page/Admin/Sidebar";
 import { autorun } from "mobx";
+import { useEffect } from "react";
 import { navigate } from "@reach/router";
 
 interface propType {
@@ -12,9 +13,9 @@ interface propType {
 }
 
 export default observer((props: propType) => {
-  autorun(() => {
+  useEffect(() => {
     navigate("/Admin/Dashboard");
-  });
+  }, []);
 
   return (
     <div className="lg:flex md:flex w-screen">

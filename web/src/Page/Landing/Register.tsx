@@ -1,10 +1,11 @@
 import { observer, useLocalObservable } from "mobx-react-lite";
 import { runInAction } from "mobx";
-import TextInput from "libs/ui/TextInput";
 import Button from "libs/ui/Button";
 import Text from "libs/ui/Text";
 import Image from "libs/ui/Image";
 import { user } from "Page/Landing";
+import Form, { Field } from "libs/ui/Form";
+import * as Yup from "yup";
 
 export default observer(() => {
   const meta = useLocalObservable(() => ({
@@ -12,19 +13,6 @@ export default observer(() => {
     password: "" as string,
     confirmPass: "" as string,
   }));
-
-  const handleEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    const value = e?.target?.value;
-    const name = e.target.name;
-
-    runInAction(() => (meta.email = value));
-  };
-
-  const handlePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    const value = e?.target?.value;
-
-    runInAction(() => (meta.password = value));
-  };
 
   const submit = () => {
     runInAction(() => null);
@@ -43,52 +31,61 @@ export default observer(() => {
       </Text>
       <div className="border-2 border-gray lg:w-3/5 px-4">
         <div className="flex flex-col justify-center items-center ">
-          <form className="flex flex-col mt-10 justify-center items-center">
-            <TextInput
+          <Form
+            initialValues={meta}
+            onSubmit={submit}
+            validationSchema={{
+              email: Yup.string().email("Invalid email").required("Required"),
+              password: Yup.string().required("Required"),
+              confirmPass: Yup.string()
+                .required("Required")
+                .oneOf([Yup.ref("password"), null], "Passwords must match"),
+            }}
+            className="flex flex-col mt-10 justify-center items-center"
+          >
+            <Field
               className="lg:w-96 border-gray border-2 pl-2"
               type="email"
               label="Email"
               placeholder="youremail@mail.com"
               name="email"
-              value={meta.email}
-              onChange={handleEmail}
             />
-            <TextInput
+            <Field
               className="lg:w-96 border-gray border-2 pl-2"
               type="password"
               label="Password"
               placeholder="xxxxxx"
               name="password"
-              value={meta.password}
-              onChange={handlePassword}
             />
-            <TextInput
+            <Field
               className="lg:w-96 border-gray border-2 pl-2"
               type="password"
               label="Confirm Password"
               placeholder="xxxxxx"
               name="confirmPass"
-              value={meta.confirmPass}
-              onChange={handlePassword}
             />
-          
-          <Text className="text-gray text-lg text-center py-7">
-            Or register with
-          </Text>
-          <div className="flex flex-row">
-            <Image
-              src={"assets/images/fb-icon.png"}
-              className="w-20 px-5"
-              alt="fb"
+
+            <Text className="text-gray text-lg text-center py-7">
+              Or register with
+            </Text>
+            <div className="flex flex-row">
+              <Image
+                src={"assets/images/fb-icon.png"}
+                className="w-20 px-5"
+                alt="fb"
+              />
+              <Image
+                src={"assets/images/google-icon.png"}
+                className="w-20 px-5"
+                alt="google"
+              />
+            </div>
+            <Button
+              caption="Register"
+              type="submit"
+              className="w-64 bg-blue-500 text-white"
             />
-            <Image
-              src={"assets/images/google-icon.png"}
-              className="w-20 px-5"
-              alt="google"
-            />
-          </div>
-          <Button caption="Register" className="w-64 bg-blue-500 text-white" />
-          </form>
+          </Form>
           <Text className="text-gray text-lg text-center mb-10">
             Have an account?{" "}
             <a

@@ -1,9 +1,9 @@
 import { observer } from "mobx-react-lite";
 import Text from "../Text";
-import { useField} from 'formik'
+import { useField } from "formik";
 
-export default observer(({label, prefix, suffix, ...rest}: any) => {
-    const [field, meta, helpers ] = useField(rest)
+export default observer(({ label, prefix, suffix, ...rest }: any) => {
+  const [field, meta] = useField(rest);
   return (
     <div className="flex flex-col place-items-start m-2">
       <Text className="pb-1">{label}</Text>
@@ -15,11 +15,14 @@ export default observer(({label, prefix, suffix, ...rest}: any) => {
             "text-xl p-3 border-transparent border-none outline-none"
           } font-montserrat `}
           type={"text"}
-          {...rest}{...field}
+          {...rest}
+          {...field}
         />
         {suffix}
       </div>
-      {meta.touched && meta.error && <Text className="text-red-500 text-sm font-light">{meta.error}</Text>}
+      {meta.touched && meta.error && (
+        <Text className="text-red-500 text-sm font-light">{meta.error}</Text>
+      )}
     </div>
   );
 });

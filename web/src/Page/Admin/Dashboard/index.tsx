@@ -17,18 +17,19 @@ interface propType {
 }
 
 const item = [
-  { name: "Adinda & Ananda", img: "/assets/images/wpp-2.png" },
-  { name: "Adinda & Ananda", img: "/assets/images/wpp-1.png" },
-  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
-  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
-  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
-  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png" },
+  { name: "Adinda & Ananda", img: "/assets/images/wpp-2.png", status: 1 },
+  { name: "Adinda & Ananda", img: "/assets/images/wpp-1.png", status: 2 },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png", status: 1 },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png", status: 3 },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png", status: 1 },
+  { name: "Adinda & Ananda", img: "/assets/images/GoogleMap.png", status: 2 },
 ];
 
 export default observer((props: propType) => {
   return (
     <div className="flex flex-col w-full">
-      <div className="lg:p-8 p-1 flex flex-row justify-end">
+      <div className="lg:p-8 p-1 flex flex-row justify-between">
+        <Text className="font-bold text-xl">Dashboard</Text>
         <Button
           className="bg-green-500 hover:bg-green-300 text-white"
           caption={
@@ -58,7 +59,26 @@ export default observer((props: propType) => {
       <div className="flex px-6 overflow-scroll">
         {item.map((items: any) => (
           <Card key={uuid()} className="border-gray-400">
-            <div className="overflow-hidden h-44 w-64">
+            <div className="relative overflow-hidden h-44 w-64">
+              <div
+                style={{
+                  backgroundColor:
+                    items.status == 1
+                      ? "green"
+                      : items.status == 2
+                      ? "blue"
+                      : "red",
+                }}
+                className="absolute float-right right-1 top-1 rounded-md px-6 bg-blue-500"
+              >
+                <Text className="text-white">
+                  {items.status == 1
+                    ? "ACTIVE"
+                    : items.status == 2
+                    ? "PENDING"
+                    : "OUTDATED"}
+                </Text>
+              </div>
               <Image
                 src={items.img}
                 alt="wpp"

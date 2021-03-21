@@ -40,7 +40,7 @@ export default observer(() => {
             initialValues={meta}
             validationSchema={{
               email: Yup.string().email("Invalid email").required("Required"),
-              password: Yup.string().required(),
+              password: Yup.string().required("Required"),
             }}
             onSubmit={submit}
           >

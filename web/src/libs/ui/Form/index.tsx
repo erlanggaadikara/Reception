@@ -1,10 +1,10 @@
-import { Formik, FormikProps, Form } from "formik";
+import { Formik, Form } from "formik";
 import Field from "./Field";
-import * as Yup from 'yup'
+import * as Yup from "yup";
 import { observer } from "mobx-react-lite";
 
 interface propType {
-  className: string;
+  className?: string;
   onSubmit: any;
   initialValues: {};
   validationSchema?: {};
@@ -22,7 +22,9 @@ export default observer(
     <Formik
       onSubmit={onSubmit}
       initialValues={initialValues}
-      validationSchema={!!validationSchema && Yup.object().shape(validationSchema)}
+      validationSchema={
+        !!validationSchema && Yup.object().shape(validationSchema)
+      }
     >
       {() => <Form className={className}>{children}</Form>}
     </Formik>
