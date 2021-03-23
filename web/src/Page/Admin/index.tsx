@@ -6,6 +6,7 @@ import Sidebar from "Page/Admin/Sidebar";
 import { autorun } from "mobx";
 import { useEffect } from "react";
 import { navigate } from "@reach/router";
+import { Session } from "libs/utils/Session";
 
 interface propType {
   path?: RouteComponentProps;
@@ -14,6 +15,7 @@ interface propType {
 
 export default observer((props: propType) => {
   useEffect(() => {
+    Session.getSession();
     navigate("/Admin/Dashboard");
   }, []);
 

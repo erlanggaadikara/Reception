@@ -18,7 +18,6 @@ export default observer(() => {
   }));
 
   const submit = async (values: any, actions: any) => {
-    console.log(values);
     let login = await query(`query {
       p_user(where: {email: {_eq: "${values.email}"}, password: {_eq: "${values.password}"}}){
         id
@@ -26,7 +25,6 @@ export default observer(() => {
         email
       }
     }`);
-    console.log(login);
     if (login.p_user.length > 0) {
       Session.setSession(login.p_user[0]);
       navigate("/Admin");

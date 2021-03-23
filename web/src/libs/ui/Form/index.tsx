@@ -22,11 +22,12 @@ export default observer(
     <Formik
       onSubmit={onSubmit}
       initialValues={initialValues}
+      enableReinitialize
       validationSchema={
         !!validationSchema && Yup.object().shape(validationSchema)
       }
     >
-      {() => <Form className={className}>{children}</Form>}
+      {(props) => <Form className={className}>{children}</Form>}
     </Formik>
   )
 );
