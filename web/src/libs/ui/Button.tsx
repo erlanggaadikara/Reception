@@ -11,6 +11,7 @@ export default observer((props: any) => {
       }
       style={props.style}
       css={props.css}
+      disabled={props.disabled}
     >
       {props.caption}
     </button>

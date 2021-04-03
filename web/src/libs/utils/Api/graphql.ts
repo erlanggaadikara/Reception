@@ -3,7 +3,7 @@ import { Api } from "./Api";
 const query = async (data: string) => {
   let q = await Api.Post(
     "https://harimadu.hasura.app/v1/graphql",
-    { query: String(data) },
+    { query: data },
     {
       "Content-Type": "application/json",
       "x-hasura-admin-secret":
@@ -16,4 +16,15 @@ const query = async (data: string) => {
   }
 };
 
-export { query };
+const encode = (data: any) => {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        `${encodeURIComponent(key)}: ${
+          typeof data[key] == "string" ? `"${data[key]}"` : data[key]
+        }`
+    )
+    .join(", ");
+};
+
+export { query, encode };

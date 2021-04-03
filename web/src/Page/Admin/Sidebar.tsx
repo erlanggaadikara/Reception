@@ -4,6 +4,7 @@ import Text from "libs/ui/Text";
 import { Session } from "libs/utils/Session";
 
 export default observer(() => {
+  Session.getSession();
   return (
     <div className="md:flex flex-col md:flex-row md:min-h-screen w-auto bg-gray-200 pt-10">
       <div className="flex flex-col w-full md:w-64 text-gray-700  dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0">

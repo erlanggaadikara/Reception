@@ -27,7 +27,7 @@ export default observer(
         !!validationSchema && Yup.object().shape(validationSchema)
       }
     >
-      {(props) => <Form className={className}>{children}</Form>}
+      {(props) => <Form className={className}>{children(props)}</Form>}
     </Formik>
   )
 );

@@ -25,8 +25,6 @@ export default observer(() => {
       }
     }`);
 
-    console.log(checkUser);
-
     if (checkUser.p_user.length > 0) {
       alert("This user already have an account");
     } else {
@@ -40,7 +38,6 @@ export default observer(() => {
           }
         }
       }`);
-      console.log(register);
       if (register.insert_p_user.returning.length > 0) {
         Session.setSession(register.insert_p_user.returning[0]);
         navigate("/Admin");

@@ -1,11 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from "@emotion/react";
 import { observer } from "mobx-react-lite";
-import { RouteComponentProps } from "@reach/router";
+import { RouteComponentProps, useLocation, navigate } from "@reach/router";
 import Sidebar from "Page/Admin/Sidebar";
-import { autorun } from "mobx";
 import { useEffect } from "react";
-import { navigate } from "@reach/router";
 import { Session } from "libs/utils/Session";
 
 interface propType {
@@ -14,9 +12,9 @@ interface propType {
 }
 
 export default observer((props: propType) => {
+  const location = useLocation();
   useEffect(() => {
-    Session.getSession();
-    navigate("/Admin/Dashboard");
+    if (location.pathname === "/Admin/") navigate("/Admin/Dashboard");
   }, []);
 
   return (
